@@ -28,10 +28,6 @@ class SearchOne(BasePage):
         self.draw_text(By.XPATH, '*[@id="homepagetabap"]/div/div[1]/div[1]')
         return self.location(self)
 
-    def loading(self):
 
-        d =  webdriver.Chrome()
-        waiting_for_element('显性等待',3, type='xpath',location='/html/body/div[2]/div/div[1]/div[1]/div[1]/div[3]/div/div[1]/div[1]', webdriver.Chrome =d)
-        print(waiting_for_element())
 
 
