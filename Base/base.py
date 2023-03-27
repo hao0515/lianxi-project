@@ -19,16 +19,16 @@ class BasePage(object):
         return self.driver.find_element(*loc)
 
     # 输入
-    def send_key(self, *loc, value):
-        self.loctor(*loc).send_keys(value)
+    def send_key(self, loc, value):
+        self.loctor(loc).send_keys(value)
 
     # 点击
-    def click(self, *loc):
-        self.loctor(*loc).click()
+    def click(self, loc):
+        self.loctor(loc).click()
 
     # 提取文字信息
     def text(self, loc):
-        self.loctor(*loc).text
+        self.loctor(loc).text
 
     # 关闭浏览器
     def quit_driver(self):

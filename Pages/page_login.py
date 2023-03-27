@@ -1,5 +1,6 @@
 from selenium.webdriver.common.by import By
 from Base.base import BasePage
+import time
 
 """定义元素和操作元素的方法"""
 
@@ -15,7 +16,11 @@ class LoginPage(BasePage):
     """页面操作方法"""
 
     def login(self, username, password):
-        self.getURL(self.url)
+        self.geturl(self.url)
+        time.sleep(1)
         self.send_key(loc=self.username, value=username)
+        time.sleep(1)
         self.send_key(loc=self.password, value=password)
+        time.sleep(1)
         self.click(loc=self.submit)
+        time.sleep(10)
