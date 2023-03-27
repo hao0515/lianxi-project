@@ -3,7 +3,7 @@ from selenium import webdriver
 from Pages.page_login import LoginPage
 
 
-class BaiBu(unittest.TestCase):
+class Login(unittest.TestCase):
 
     def test001(self):
         self.driver = webdriver.Chrome()
