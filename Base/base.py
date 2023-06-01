@@ -1,5 +1,5 @@
 from selenium import webdriver
-
+import time
 
 class BasePage(object):
     '''封装每个页面的公用方法'''
@@ -26,10 +26,11 @@ class BasePage(object):
     def click(self, loc):
         self.loctor(loc).click()
 
-    # 提取文字信息
-    def text(self, loc):
-        self.loctor(loc).text
+    # # 提取文字信息
+    # def text(self, loc):
+    #     self.loctor(loc).text
 
     # 关闭浏览器
     def quit_driver(self):
         self.driver.quit()
+
