@@ -21,6 +21,7 @@ class LoginPage(BasePage):
     def login(self, username, password):
 
         self.geturl(self.url)
+        self.max() #窗口最大化
         time.sleep(1)
         self.send_key(loc=self.username, value=username)
         time.sleep(1)
@@ -30,11 +31,11 @@ class LoginPage(BasePage):
         time.sleep(10)
 
     # 首页断言 （定位分离）
-    def worktable_undo(self):
+    def shouye_loc(self):
         return self.loctor(loc=self.headtext)
 
     # 获取首页断言文本信息 （操作元素动作分离）
-    def worktable_undo_text(self):
-        return self.worktable_undo().text
+    def shouye_text(self):
+        return self.shouye_loc().text
 
 

@@ -26,10 +26,9 @@ class BasePage(object):
     def click(self, loc):
         self.loctor(loc).click()
 
-    # # 提取文字信息
-    # def text(self, loc):
-    #     self.loctor(loc).text
-
+    # 窗口最大化
+    def max(self):
+        self.driver.maximize_window()
     # 关闭浏览器
     def quit_driver(self):
         self.driver.quit()
