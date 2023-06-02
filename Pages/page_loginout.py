@@ -16,11 +16,19 @@ class LoginoutPage(BasePage):
     """页面操作方法"""
 
     def loginout(self):
+        try:
 
-        self.click(loc=self.head_picture)
-        time.sleep(4)
-        self.click(loc=self.login_out)
-        time.sleep(10)
+            self.wait_click(loc=self.head_picture)
+            self.click(loc=self.head_picture)
+            #time.sleep(4)
+            self.wait_click(loc=self.login_out)
+            self.click(loc=self.login_out)
+        except :
+
+            time.sleep(3)
+            self.click(loc=self.head_picture)
+            # time.sleep(4)
+            self.click(loc=self.login_out)
 
 
 

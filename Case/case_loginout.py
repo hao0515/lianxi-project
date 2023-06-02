@@ -3,7 +3,6 @@ from Pages.page_loginout import LoginoutPage
 from Case.case_login import TestLogin
 import pytest
 
-
 class TestLoginout():
     def setup(self):
         TestLogin.test_login(self)
@@ -13,4 +12,7 @@ class TestLoginout():
         loginout.loginout()
         loginout_text = loginout.log_text()
         print(loginout_text)
-        assert loginout_text == '金舵中台旗舰版(沙箱)账号登录'
+
+        while True:
+            assert '金舵中台旗舰版(沙箱)账号登录' == loginout_text
+            print("退出登录通过")
