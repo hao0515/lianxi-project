@@ -29,13 +29,22 @@ class LoginPage(BasePage):
         time.sleep(1)
         self.click(loc=self.submit)
         time.sleep(10)
+        try:
+            self.loctor(loc=self.Continuelogin)
+            self.click(loc=self.Continuelogin)
+            time.sleep(10)
 
-    # 首页断言 （定位分离）
-    def shouye_loc(self):
-        return self.loctor(loc=self.headtext)
+        except:
+            pass
 
-    # 获取首页断言文本信息 （操作元素动作分离）
+
+
+
+
+
+
+    # 获取首页断言文本信息
     def shouye_text(self):
-        return self.shouye_loc().text
+        return self.loctor(loc=self.headtext).text
 
 
