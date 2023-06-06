@@ -2,7 +2,7 @@ from selenium.webdriver.common.by import By
 from Base.base import BasePage
 import time
 
-"""定义元素和操作元素的方法"""
+"""退出登录"""
 
 
 class LoginoutPage(BasePage):
@@ -13,11 +13,11 @@ class LoginoutPage(BasePage):
     login_out = (By.XPATH, '//*[@id="flexpanelap12"]/a[3]/span')
     login_text = (By.ID, "kd_cloud_title")
 
-    """页面操作方法"""
+    """页面操作"""
 
     def loginout(self):
-        try:
 
+        try:
             self.wait_click(loc=self.head_picture)
             self.click(loc=self.head_picture)
             #time.sleep(4)

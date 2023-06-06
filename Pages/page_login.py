@@ -2,7 +2,7 @@ from selenium.webdriver.common.by import By
 from Base.base import BasePage
 import time
 
-"""定义元素和操作元素的方法"""
+"""登录"""
 
 
 class LoginPage(BasePage):
@@ -16,19 +16,17 @@ class LoginPage(BasePage):
     headtext = (By.XPATH, '//*[@id="homepagetabap"]/div/div[1]/div[1]')
     Continuelogin = (By.CLASS_NAME, "_39-YuAUu")
 
-    """页面操作方法"""
+    """页面操作"""
 
     def login(self, username, password):
-        self.implicitly_wait()
+        self.implicitly_wait() #隐式等待全部元素加载
         self.geturl(self.url)
         self.max() #窗口最大化
-        #time.sleep(1)
-        self.send_key(loc=self.username, value=username)
-        #time.sleep(1)
+        self.send_key(loc=self.username, value=username) #定位账号密码位置
         self.send_key(loc=self.password, value=password)
-        #time.sleep(1)
         self.click(loc=self.submit)
         time.sleep(3)
+        #如果账号被登陆，强制登录
         try:
             self.loctor(loc=self.Continuelogin)
             self.click(loc=self.Continuelogin)
