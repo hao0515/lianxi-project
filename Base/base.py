@@ -7,6 +7,7 @@ class BasePage(object):
 
     # 浏览器驱动
     def __init__(self, driver):
+
         options = webdriver.ChromeOptions()
         options.add_experimental_option('detach', True)
         self.driver = driver
